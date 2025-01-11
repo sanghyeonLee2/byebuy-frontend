@@ -23,9 +23,19 @@ const setupInterceptors = (instance) => {
 
   instance.interceptors.request.use(
     (config) => {
+      // 로컬 스토리지에서 token 값을 가져옵니다
+      const token = localStorage.getItem('token');
+
+      if (token) {
+        // 토큰이 있을 경우, Authorization 헤더에 추가
+        config.headers['Authorization'] = `Bearer ${token}`;
+      }
+
       return config;
     },
-    (error) => Promise.reject(error),
+    (error) => {
+      return Promise.reject(error);
+    },
   );
 
   instance.interceptors.response.use(

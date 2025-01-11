@@ -6,4 +6,7 @@ export const iconMap = {
   check: 'src/components/icons/check.svg',
   me: 'src/components/icons/me.svg',
   arrowDropDown: '../../src/components/icons/arrow_drop_down.svg',
+  filerList: '../../src/components/icons/filter_list.svg',
+  myProduct: '../../src/components/icons/my_product.svg',
+  logo: '../../src/components/icons/logo.svg',
 };
