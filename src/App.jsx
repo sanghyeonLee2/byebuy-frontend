@@ -1,7 +1,8 @@
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import HeaderNavigation from './components/HeaderNavigation';
-import Home from './pages/home/HomePage';
 import Example from './pages/example/Example123';
+import Home from './pages/home/HomePage';
+import { Register } from './pages/product/register/Register';
 import SignupPage from './pages/signup/signupPage';
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/example" element={<Example />} />
         <Route path="/signup" element={<SignupPage />} />
+        <Route path="/product/register" element={<Register />} />
       </Routes>
     </BrowserRouter>
   );
