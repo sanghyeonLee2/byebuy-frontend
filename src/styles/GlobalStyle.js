@@ -15,7 +15,7 @@ export const GlobalStyle = createGlobalStyle`
   body {
     // TODO: 폰트가 정해지면 적용 예정
     /* font-family:  */
-    height: 100%;
+    height: 100dvh;
     margin: 0;
   }
  #root {
