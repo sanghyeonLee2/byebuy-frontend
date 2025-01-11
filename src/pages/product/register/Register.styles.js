@@ -145,7 +145,7 @@ export const CategoryOption = styled.div`
 export const PlaceholderText = styled.p`
   font-size: 14px;
 
-  color: ${({ isSelected }) => (isSelected ? '#fff' : '#acacac')};
+  color: ${({ $isSelected }) => ($isSelected ? '#fff' : '#acacac')};
 `;
 
 export const CategoryText = styled.p`

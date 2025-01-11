@@ -187,7 +187,7 @@ export const Register = () => {
         <S.Text>카테고리</S.Text>
         {!openCategory ? (
           <S.CategoryDefault onClick={() => setOpenCategory(true)}>
-            <S.PlaceholderText isSelected={!!formData.category}>
+            <S.PlaceholderText $isSelected={!!formData.category}>
               {formData.category || '카테고리를 선택해주세요'}
             </S.PlaceholderText>
             <S.CategoryArrow src={iconMap.arrowDropDown} />
@@ -195,7 +195,7 @@ export const Register = () => {
         ) : (
           <S.CategoryWrapper>
             <S.CategoryOption onClick={() => setOpenCategory(false)}>
-              <S.PlaceholderText isSelected={formData.category}>카테고리를 선택해주세요</S.PlaceholderText>
+              <S.PlaceholderText $isSelected={formData.category}>카테고리를 선택해주세요</S.PlaceholderText>
               <S.CategoryArrow src={iconMap.arrowDropDown} />
             </S.CategoryOption>
             <S.CategoryOption onClick={() => handleCategorySelect('생활용품')}>

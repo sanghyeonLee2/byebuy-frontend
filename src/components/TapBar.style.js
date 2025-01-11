@@ -39,8 +39,8 @@ export const TabItem = styled.div`
 export const TabIcon = styled.img`
   width: 20px;
   height: 20px;
-  filter: ${({ isActive }) =>
-    isActive
+  filter: ${({ $isActive }) =>
+    $isActive
       ? 'brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%)'
       : 'brightness(0) saturate(100%) invert(45%) sepia(9%) saturate(248%) hue-rotate(202deg) brightness(94%) contrast(86%)'};
   object-fit: contain;
@@ -48,5 +48,5 @@ export const TabIcon = styled.img`
 
 export const TabLabel = styled.span`
   font-size: 12px;
-  color: ${({ isActive }) => (isActive ? '#fff' : '#737378')};
+  color: ${({ $isActive }) => ($isActive ? '#fff' : '#737378')};
 `;
