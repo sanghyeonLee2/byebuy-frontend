@@ -1,17 +1,16 @@
 import { Route, Routes, useLocation } from 'react-router-dom';
 import HeaderNavigation from './components/HeaderNavigation';
 import TabBar from './components/TapBar';
-import AuthPage from './pages/auth/AuthPage';
 import ChatPage from './pages/chat/ChatPage';
 import ChatListPage from './pages/chatList/ChatListPage';
 import Example from './pages/example/Example123';
 import ExplorationPage from './pages/exploration/ExplorationPage';
 import MatchingPage from './pages/matching/matching';
+import MyPage from './pages/mypage/MyPage';
+import MyItemListPage from './pages/mypage/myItemList/MyItemListPage';
 import { Register } from './pages/product/register/Register';
 import SigninPage from './pages/signin/SigninPage';
 import SignupPage from './pages/signup/SignupPage';
-import MyPage from './pages/mypage/MyPage';
-import MyItemListPage from './pages/mypage/myItemList/MyItemListPage';
 
 function App() {
   const location = useLocation();
@@ -28,7 +27,7 @@ function App() {
         <Route path="/chat" element={<ChatPage />} />
         <Route path="/register" element={<Register />} />
         <Route path="/signin" element={<SigninPage />} />
-        <Route path="/product/exploration" element={<ExplorationPage />} />
+        <Route path="/exploration" element={<ExplorationPage />} />
         <Route path="/matching" element={<MatchingPage />} />
         <Route path="/mypage" element={<MyPage />} />
         <Route path="/myitem" element={<MyItemListPage />} />

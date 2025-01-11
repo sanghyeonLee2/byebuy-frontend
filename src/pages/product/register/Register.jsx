@@ -76,9 +76,16 @@ export const Register = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!formData.title || !formData.description || !formData.category || !formData.image) {
+      alert('빈칸을 모두 채워주세요🥲');
+      return;
+    }
+
     try {
       await createItem();
       dispatch({ type: 'RESET' }); // 성공 시 폼 초기화
+      alert('상품 등록이 완료되었습니다.😊');
     } catch (error) {
       console.error(error);
     }

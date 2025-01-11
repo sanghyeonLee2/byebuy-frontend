@@ -6,10 +6,11 @@ import * as S from './TapBar.style';
 const TabBar = () => {
   const navigate = useNavigate();
   const { pathname } = useLocation();
+  const token = localStorage.getItem('token');
 
   const tabs = [
     { icon: iconMap.chat, path: '/chatlist', label: '채팅' },
-    { icon: iconMap.home, path: '/', label: '홈' },
+    { icon: iconMap.home, path: token ? '/exploration' : '/', label: '홈' },
     { icon: iconMap.accountCircle, path: '/mypage', label: '마이페이지' },
   ];
 
