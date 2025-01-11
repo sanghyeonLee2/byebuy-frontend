@@ -5,4 +5,5 @@ export const iconMap = {
   addAPhoto: '../../src/components/icons/add_a_photo.svg',
   check: 'src/components/icons/check.svg',
   me: 'src/components/icons/me.svg',
+  arrowDropDown: '../../src/components/icons/arrow_drop_down.svg',
 };

@@ -3,10 +3,11 @@ import HeaderNavigation from './components/HeaderNavigation';
 import Example from './pages/example/Example123';
 import Home from './pages/home/HomePage';
 import { Register } from './pages/product/register/Register';
-
 import SigninPage from './pages/signin/SigninPage';
 import AuthPage from './pages/auth/AuthPage';
 import SignupPage from './pages/signup/SignupPage';
+import ExplorationPage from './pages/exploration/ExplorationPage';
+
 function App() {
   return (
     <BrowserRouter>
@@ -18,6 +19,7 @@ function App() {
         <Route path="/product/register" element={<Register />} />
         <Route path="/signin" element={<SigninPage />} />
         <Route path="/auth" element={<AuthPage />} />
+        <Route path="/product/exploration" element={<ExplorationPage />} />
       </Routes>
     </BrowserRouter>
   );

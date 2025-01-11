@@ -33,6 +33,8 @@ export const InputWrapper = styled.input`
   border: 1px solid #44444a;
   outline: none;
 
+  font-size: 14px;
+
   background-color: #58585f;
   color: #fff;
 
@@ -89,15 +91,82 @@ export const ImageUploadWrapper = styled.div`
   background-color: #58585f;
 `;
 
+export const CategoryDefault = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+
+  margin-bottom: 16px;
+  padding: 16px 10px;
+
+  border-radius: 8px;
+  border: 1px solid #44444a;
+  outline: none;
+
+  background-color: #58585f;
+  color: #fff;
+
+  cursor: pointer;
+`;
+
+export const CategoryWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  border: 1px solid #acacac;
+  border-radius: 8px;
+
+  background-color: #58585f;
+`;
+
+export const CategoryArrow = styled.img`
+  width: 20px;
+  height: 20px;
+
+  object-fit: fill;
+`;
+
+export const CategoryOption = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  border: 1px solid rgba(172, 172, 172, 0.3); // #ACACAC with 30% opacit
+
+  padding: 12px 16px;
+
+  cursor: pointer;
+`;
+
+export const PlaceholderText = styled.p`
+  font-size: 14px;
+
+  color: ${({ isSelected }) => (isSelected ? '#fff' : '#acacac')};
+`;
+
+export const CategoryText = styled.p`
+  font-size: 14px;
+
+  color: #fff;
+`;
+
 export const HiddenInput = styled.input`
+  position: absolute;
   width: 100%;
   height: 100%;
   opacity: 0;
   cursor: pointer;
+  cursor: pointer;
 `;
 
 export const ImageUploadIcon = styled.img`
-  position: absolute;
+  /* position: absolute; */
+
+  margin-bottom: 4px;
 
   width: 24px;
   height: 24px;

@@ -17,6 +17,8 @@ export const GlobalStyle = createGlobalStyle`
     /* font-family:  */
     height: 100dvh;
     margin: 0;
+    display: flex;
+    justify-content: center;
   }
  #root {
   margin: 0 auto;
