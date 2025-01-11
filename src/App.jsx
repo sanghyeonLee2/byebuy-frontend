@@ -2,9 +2,9 @@ import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import HeaderNavigation from './components/HeaderNavigation';
 import Home from './pages/home/HomePage';
 import Example from './pages/example/Example123';
-import SignupPage from './pages/signup/signupPage';
 import SigninPage from './pages/signin/SigninPage';
-
+import AuthPage from './pages/auth/AuthPage';
+import SignupPage from './pages/signup/SignupPage';
 function App() {
   return (
     <BrowserRouter>
@@ -14,6 +14,7 @@ function App() {
         <Route path="/example" element={<Example />} />
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/signin" element={<SigninPage />} />
+        <Route path="/auth" element={<AuthPage />} />
       </Routes>
     </BrowserRouter>
   );
