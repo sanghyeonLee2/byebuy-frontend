@@ -15,6 +15,7 @@ export const GlobalStyle = createGlobalStyle`
   }
  #root {
   margin: 0 auto;
+  padding: 0 20px;
   height: 100%;
   width: 375px;
   background-color: lightgray;
