@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import HeaderNavigation from './components/HeaderNavigation';
+import TabBar from './components/TapBar';
 import AuthPage from './pages/auth/AuthPage';
 import ChatPage from './pages/chat/ChatPage';
 import ChatListPage from './pages/chatList/ChatListPage';
@@ -27,6 +28,7 @@ function App() {
         <Route path="/product/exploration" element={<ExplorationPage />} />
         <Route path="/matching" element={<MatchingPage />} />
       </Routes>
+      <TabBar />
     </BrowserRouter>
   );
 }

@@ -1,5 +1,5 @@
 import imageCompression from 'browser-image-compression';
-import { useReducer, useState } from 'react';
+import { useEffect, useReducer, useState } from 'react';
 import { postItem } from '../../../commons/api/item.api';
 import useHeaderNavigation from '../../../commons/hooks/useHeaderNavigation';
 import { iconMap } from '../../../components/icons/iconMap';
@@ -28,7 +28,7 @@ const formReducer = (state, action) => {
         latitude: 127.032331,
         longitude: 37.561706,
         isMain: true,
-        isDisplayed: true,
+        isDisplayed: false,
       };
     case 'RESET':
       return INITIAL_FORM_STATE;
@@ -118,6 +118,50 @@ export const Register = () => {
     });
     setOpenCategory(false);
   };
+
+  const getCurrentLocation = () => {
+    if (!navigator.geolocation) {
+      console.error('Geolocation is not supported by this browser.');
+      return;
+    }
+
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        dispatch({
+          type: 'UPDATE_FIELD',
+          field: 'latitude',
+          value: position.coords.latitude,
+        });
+        dispatch({
+          type: 'UPDATE_FIELD',
+          field: 'longitude',
+          value: position.coords.longitude,
+        });
+      },
+      (error) => {
+        console.error('Error getting location:', error);
+        dispatch({
+          type: 'UPDATE_FIELD',
+          field: 'latitude',
+          value: 37.5582876,
+        });
+        dispatch({
+          type: 'UPDATE_FIELD',
+          field: 'longitude',
+          value: 127.0001671,
+        });
+      },
+      {
+        enableHighAccuracy: true,
+        timeout: 5000,
+        maximumAge: 0,
+      },
+    );
+  };
+
+  useEffect(() => {
+    getCurrentLocation();
+  }, []);
 
   return (
     <S.Wrapper onSubmit={handleSubmit}>

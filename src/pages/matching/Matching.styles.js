@@ -93,7 +93,7 @@ export const Title = styled.h2`
   font-size: 24px;
   color: #ffffff;
 
-  animation: revealText 0.8s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+  animation: revealText 1.5s cubic-bezier(0.77, 0, 0.175, 1) forwards;
   animation-delay: 1.2s;
   clip-path: inset(100% 0 0 0);
 
@@ -111,8 +111,8 @@ export const Duration = styled.p`
   font-size: 18px;
   color: #969696;
 
-  animation: revealText 0.8s cubic-bezier(0.77, 0, 0.175, 1) forwards;
-  animation-delay: 0.6s;
+  animation: revealText 0.5s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+  animation-delay: 1.2s;
   clip-path: inset(100% 0 0 0);
 
   @keyframes revealText {
