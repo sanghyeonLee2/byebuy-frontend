@@ -10,7 +10,7 @@ const TabBar = () => {
   const tabs = [
     { icon: iconMap.chat, path: '/chatlist', label: '채팅' },
     { icon: iconMap.home, path: '/', label: '홈' },
-    { icon: iconMap.accountCircle, path: '/profile', label: '프로필' },
+    { icon: iconMap.accountCircle, path: '/profile', label: '마이페이지' },
   ];
 
   return (
