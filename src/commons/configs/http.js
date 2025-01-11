@@ -2,7 +2,6 @@ import axios from 'axios';
 
 export const httpApi = axios.create({ baseURL: import.meta.env.VITE_API_URL });
 
-
 const config = {
   headers: {
     'Content-Type': 'application/json',
@@ -24,7 +23,6 @@ const setupInterceptors = (instance) => {
 
   instance.interceptors.request.use(
     (config) => {
-
       return config;
     },
     (error) => Promise.reject(error),
@@ -64,7 +62,7 @@ const handleError = (error) => {
 };
 
 const createApiMethods = (instance) => ({
-  Get: async (url, params = {}, ) => {
+  Get: async (url, params = {}) => {
     try {
       const response = await instance.get(url, {
         ...config,
@@ -87,7 +85,7 @@ const createApiMethods = (instance) => ({
     }
   },
 
-  Put: async (url, data, ) => {
+  Put: async (url, data) => {
     try {
       const response = await instance.put(url, data, config);
       return response.data;
@@ -107,7 +105,15 @@ const createApiMethods = (instance) => ({
     }
   },
 
-
+  Patch: async (url, data) => {
+    try {
+      const response = await instance.patch(url, data, config);
+      return response.data;
+    } catch (error) {
+      handleError(error);
+      return Promise.reject(error);
+    }
+  },
 });
 
 export const { Get, Post, Put, Delete, Patch } = createApiMethods(httpApi);
