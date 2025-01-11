@@ -10,7 +10,7 @@ export const GlobalStyle = createGlobalStyle`
   body {
     // TODO: 폰트가 정해지면 적용 예정
     /* font-family:  */
-    height: 100vh;
+    height: 100dvh;
     margin: 0;
   }
  #root {
@@ -18,7 +18,7 @@ export const GlobalStyle = createGlobalStyle`
   padding: 0 20px;
   height: 100%;
   width: 375px;
-  background-color: lightgray;
+  background-color: #252528;
  }
   li {
     list-style: none;
