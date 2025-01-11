@@ -72,7 +72,7 @@ const createApiMethods = (instance) => ({
       });
       return response.data;
     } catch (error) {
-      handleError(error, showToast);
+      handleError(error);
       return Promise.reject(error);
     }
   },
@@ -82,7 +82,7 @@ const createApiMethods = (instance) => ({
       const response = await instance.post(url, data, config);
       return response.data;
     } catch (error) {
-      handleError(error, showToast);
+      handleError(error);
       return Promise.reject(error);
     }
   },
@@ -92,7 +92,7 @@ const createApiMethods = (instance) => ({
       const response = await instance.put(url, data, config);
       return response.data;
     } catch (error) {
-      handleError(error, showToast);
+      handleError(error);
       return Promise.reject(error);
     }
   },
@@ -102,7 +102,7 @@ const createApiMethods = (instance) => ({
       const response = await instance.delete(url, config);
       return response.data;
     } catch (error) {
-      handleError(error, showToast);
+      handleError(error);
       return Promise.reject(error);
     }
   },
