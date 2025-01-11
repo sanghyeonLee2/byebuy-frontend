@@ -9,4 +9,7 @@ export const iconMap = {
   filerList: '../../src/components/icons/filter_list.svg',
   myProduct: '../../src/components/icons/my_product.svg',
   logo: '../../src/components/icons/logo.svg',
+  home: 'src/components/icons/home.svg',
+  chat: 'src/components/icons/chat.svg',
+  accountCircle: 'src/components/icons/account_circle.svg',
 };

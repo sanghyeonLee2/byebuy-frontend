@@ -25,8 +25,9 @@ export const GlobalStyle = createGlobalStyle`
   padding: 0 20px;
   min-height: 100vh;
   width: 375px;
-  background-color: #252528;
- }
+  /* background-color: #252528; */
+  background: ${(props) =>
+    props.isMatchingPage ? 'linear-gradient(180deg, #1e2f7c 0%, #111d57 47%, #3e2372 100%)' : '#252528'};
   li {
     list-style: none;
   }
@@ -45,8 +46,26 @@ export const GlobalStyle = createGlobalStyle`
   transition: background-color 0.2s, filter 0.2s;
   
   &:hover {
-    filter: grayscale(50%); /* 색상에서 50% 정도 흑백 효과 적용 */
+    filter: grayscale(50%);
   }
 }
+    border: none;
+    outline: none;
+    width: 100%;
+    background-color: #8768FF;
+    color: #fff;
+    padding: 0.75rem;
+    border-radius: 12px;
+    font-size: 0.875rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    &:hover {
+    background-color: #8768FF;
+  }
+  
+}
+ }
+
 
 `;
