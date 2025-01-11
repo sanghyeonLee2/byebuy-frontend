@@ -6,7 +6,7 @@ import ChatPage from './pages/chat/ChatPage';
 import ChatListPage from './pages/chatList/ChatListPage';
 import Example from './pages/example/Example123';
 import ExplorationPage from './pages/exploration/ExplorationPage';
-import MatchingPage from './pages/matching/matching';
+import MatchingPage from './pages/matching/Matching';
 import MyPage from './pages/mypage/MyPage';
 import MyItemListPage from './pages/mypage/myItemList/MyItemListPage';
 import { Register } from './pages/product/register/Register';
