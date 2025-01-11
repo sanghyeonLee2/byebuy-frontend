@@ -1,6 +1,7 @@
 import { Route, Routes, useLocation } from 'react-router-dom';
 import HeaderNavigation from './components/HeaderNavigation';
 import TabBar from './components/TapBar';
+import AuthPage from './pages/auth/AuthPage';
 import ChatPage from './pages/chat/ChatPage';
 import ChatListPage from './pages/chatList/ChatListPage';
 import Example from './pages/example/Example123';
