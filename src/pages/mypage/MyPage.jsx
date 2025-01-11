@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import * as St from './MyPage.style';
+import { logout } from '../../commons/api/example.api';
+import { getMyItem, getMyPopularItem } from '../../commons/api/item.api';
+import { useAuthGuard } from '../../commons/hooks/useAuthGuard';
 import useHeaderNavigation from '../../commons/hooks/useHeaderNavigation';
 import { decodeToken } from '../../commons/utils/decodeToken';
 import LogOut from '../../components/icons/logout.svg';
-import { getMyItem, getMyPopularItem } from '../../commons/api/item.api';
-import { logout } from '../../commons/api/example.api';
+import * as St from './MyPage.style';
 
 const MyPage = () => {
   useHeaderNavigation({
@@ -16,6 +17,7 @@ const MyPage = () => {
   const [userData, setUserData] = useState(null);
   const [myItemList, setMyItemList] = useState([]);
   const [myPopularItems, setMyPopularItems] = useState([]);
+  useAuthGuard();
 
   useEffect(() => {
     const token = localStorage.getItem('token');

@@ -1,5 +1,6 @@
 import imageCompression from 'browser-image-compression';
 import { useEffect, useReducer, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { postItem } from '../../../commons/api/item.api';
 import useHeaderNavigation from '../../../commons/hooks/useHeaderNavigation';
 import { iconMap } from '../../../components/icons/iconMap';
@@ -43,6 +44,7 @@ export const Register = () => {
     title: '상품 등록',
     right: 'empty',
   });
+  const navigate = useNavigate();
 
   const [openCategory, setOpenCategory] = useState(false);
   const [formData, dispatch] = useReducer(formReducer, INITIAL_FORM_STATE);
@@ -86,6 +88,7 @@ export const Register = () => {
       await createItem();
       dispatch({ type: 'RESET' }); // 성공 시 폼 초기화
       alert('상품 등록이 완료되었습니다.😊');
+      navigate('/mypage');
     } catch (error) {
       console.error(error);
     }

@@ -1,6 +1,5 @@
 import { useLocation, useNavigate } from 'react-router-dom';
 
-import { useAuthGuard } from '../commons/hooks/useAuthGuard';
 import { iconMap } from './icons/iconMap';
 import * as S from './TapBar.style';
 
@@ -8,7 +7,6 @@ const TabBar = () => {
   const navigate = useNavigate();
   const { pathname } = useLocation();
   const token = localStorage.getItem('token');
-  useAuthGuard();
 
   const tabs = [
     { icon: iconMap.chat, path: '/chatlist', label: '채팅' },

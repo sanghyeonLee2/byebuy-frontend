@@ -1,13 +1,15 @@
-import React, { useState, useEffect } from 'react';
-import * as St from './ChatListPage.style';
-import useHeaderNavigation from '../../commons/hooks/useHeaderNavigation';
-import { getChatRooms } from '../../commons/api/chat.api';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { getChatRooms } from '../../commons/api/chat.api';
+import { useAuthGuard } from '../../commons/hooks/useAuthGuard';
+import useHeaderNavigation from '../../commons/hooks/useHeaderNavigation';
+import * as St from './ChatListPage.style';
 
 export default function ChatListPage() {
   const [chatRooms, setChatRooms] = useState([]);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
+  useAuthGuard();
 
   // 헤더 네비게이션 설정
   useHeaderNavigation({
