@@ -25,8 +25,9 @@ export const GlobalStyle = createGlobalStyle`
   padding: 0 20px;
   min-height: 100vh;
   width: 375px;
-  background-color: #252528;
- }
+  /* background-color: #252528; */
+  background: ${(props) =>
+    props.isMatchingPage ? 'linear-gradient(180deg, #1e2f7c 0%, #111d57 47%, #3e2372 100%)' : '#252528'};
   li {
     list-style: none;
   }
@@ -46,5 +47,8 @@ export const GlobalStyle = createGlobalStyle`
     &:hover {
     background-color: #8768FF;
   }
-  }
+  
+}
+ }
+
 `;

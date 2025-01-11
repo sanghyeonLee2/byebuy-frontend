@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import HeaderNavigation from './components/HeaderNavigation';
 import TabBar from './components/TapBar';
 import AuthPage from './pages/auth/AuthPage';
@@ -13,8 +13,11 @@ import SigninPage from './pages/signin/SigninPage';
 import SignupPage from './pages/signup/SignupPage';
 
 function App() {
+  const location = useLocation();
+  const isMatchingPage = location.pathname === '/matching';
+
   return (
-    <BrowserRouter>
+    <>
       <HeaderNavigation />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -28,8 +31,8 @@ function App() {
         <Route path="/product/exploration" element={<ExplorationPage />} />
         <Route path="/matching" element={<MatchingPage />} />
       </Routes>
-      <TabBar />
-    </BrowserRouter>
+      {!isMatchingPage && <TabBar />}
+    </>
   );
 }
 

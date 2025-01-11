@@ -1,13 +1,22 @@
-import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
+import { BrowserRouter, useLocation } from 'react-router-dom';
 import App from './App.jsx';
-import { GlobalStyle } from './styles/GlobalStyle';
+import { GlobalStyle } from './styles/GlobalStyle.js';
 
-createRoot(document.getElementById('root')).render(
-  // <StrictMode>
-  <>
-    <GlobalStyle />
-    <App />
-  </>,
-  // </StrictMode>,
-);
+const GlobalStyleWrapper = () => {
+  const location = useLocation();
+  const isMatchingPage = location.pathname === '/matching';
+
+  return <GlobalStyle isMatchingPage={isMatchingPage} />;
+};
+
+const Root = () => {
+  return (
+    <BrowserRouter>
+      <GlobalStyleWrapper />
+      <App />
+    </BrowserRouter>
+  );
+};
+
+createRoot(document.getElementById('root')).render(<Root />);
