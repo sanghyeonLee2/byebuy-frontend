@@ -26,8 +26,6 @@ function SigninPage() {
 
     try {
       const response = await Login(formData); // Login API 호출
-      console.log(response); // 응답 결과 확인
-
       if (response) {
         alert('로그인에 성공했습니다!');
         localStorage.setItem('token', response.token);
