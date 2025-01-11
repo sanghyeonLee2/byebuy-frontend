@@ -1,7 +1,8 @@
 import React from 'react';
+import { ExplorationHeader } from './ExplorationPage.style';
 
 function ExplorationPage(props) {
-  return <div></div>;
+  return <ExplorationHeader></ExplorationHeader>;
 }
 
 export default ExplorationPage;
