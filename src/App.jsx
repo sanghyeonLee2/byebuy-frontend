@@ -20,14 +20,13 @@ function App() {
     <>
       <HeaderNavigation />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/auth" element={<AuthPage />} />
         <Route path="/example" element={<Example />} />
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/chatlist" element={<ChatListPage />} />
         <Route path="/chat" element={<ChatPage />} />
         <Route path="/register" element={<Register />} />
         <Route path="/signin" element={<SigninPage />} />
-        <Route path="/auth" element={<AuthPage />} />
         <Route path="/product/exploration" element={<ExplorationPage />} />
         <Route path="/matching" element={<MatchingPage />} />
       </Routes>

@@ -33,6 +33,22 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   button {
+  border: none;
+  outline: none;
+  width: 100%;
+  background-color: #8768FF;
+  color: #fff;
+  padding: 0.75rem;
+  border-radius: 12px;
+  font-size: 0.875rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s, filter 0.2s;
+  
+  &:hover {
+    filter: grayscale(50%);
+  }
+}
     border: none;
     outline: none;
     width: 100%;
@@ -50,5 +66,6 @@ export const GlobalStyle = createGlobalStyle`
   
 }
  }
+
 
 `;
