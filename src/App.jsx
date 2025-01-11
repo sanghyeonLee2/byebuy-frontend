@@ -6,7 +6,6 @@ import ChatPage from './pages/chat/ChatPage';
 import ChatListPage from './pages/chatList/ChatListPage';
 import Example from './pages/example/Example123';
 import ExplorationPage from './pages/exploration/ExplorationPage';
-import Home from './pages/home/HomePage';
 import MatchingPage from './pages/matching/matching';
 import { Register } from './pages/product/register/Register';
 import SigninPage from './pages/signin/SigninPage';
@@ -20,7 +19,7 @@ function App() {
     <>
       <HeaderNavigation />
       <Routes>
-        <Route path="/auth" element={<AuthPage />} />
+        <Route path="/" element={<AuthPage />} />
         <Route path="/example" element={<Example />} />
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/chatlist" element={<ChatListPage />} />

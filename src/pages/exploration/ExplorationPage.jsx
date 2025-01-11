@@ -45,6 +45,7 @@ function ExplorationPage(props) {
     };
     fetchItems();
   }, []);
+  console.log(items);
 
   return (
     <>
@@ -55,7 +56,7 @@ function ExplorationPage(props) {
         </FilterBtn>
         <MyProductWrap>
           <span>내물건</span>
-          <img src={myProduct} alt={myItems.title} />
+          <img src={myProduct} alt={myItems?.title} />
         </MyProductWrap>
       </ExplorationHeader>
 
