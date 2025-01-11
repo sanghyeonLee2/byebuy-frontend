@@ -1,7 +1,14 @@
 import { useNavigate } from 'react-router-dom';
 import * as S from './HomePage.style';
+import useHeaderNavigation from '../../commons/hooks/useHeaderNavigation';
 
 const Home = () => {
+  useHeaderNavigation({
+    left: 'backArrow',
+    title: '홈',
+    right: 'empty',
+  });
+
   const navigate = useNavigate();
 
   const handleClick = () => {
