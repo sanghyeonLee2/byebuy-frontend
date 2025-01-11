@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import HeaderNavigation from './components/HeaderNavigation';
 import Home from './pages/home/HomePage';
 import Example from './pages/example/Example123';
 import SignupPage from './pages/signup/signupPage';
@@ -6,6 +7,7 @@ import SignupPage from './pages/signup/signupPage';
 function App() {
   return (
     <BrowserRouter>
+      <HeaderNavigation />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/example" element={<Example />} />
