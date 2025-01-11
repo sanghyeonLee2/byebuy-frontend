@@ -1,7 +1,14 @@
 import Snowfall from 'react-snowfall';
+import useHeaderNavigation from '../../commons/hooks/useHeaderNavigation';
 import * as S from './Matching.styles';
 
 const MatchingPage = () => {
+  useHeaderNavigation({
+    left: 'backArrow',
+    title: '물물교환',
+    right: 'empty',
+  });
+
   return (
     <S.Wrapper>
       <Snowfall />

@@ -7,9 +7,7 @@ export const Wrapper = styled.div`
   justify-content: center;
 
   width: 100%;
-  height: 95%;
-
-  padding-bottom: 20px;
+  height: 75%;
 
   overflow: hidden;
   background: linear-gradient(180deg, #1e2f7c 0%, #111d57 47%, #3e2372 100%);
