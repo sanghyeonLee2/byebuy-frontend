@@ -10,15 +10,15 @@ const TabBar = () => {
   const tabs = [
     { icon: iconMap.chat, path: '/chatlist', label: '채팅' },
     { icon: iconMap.home, path: '/', label: '홈' },
-    { icon: iconMap.accountCircle, path: '/profile', label: '마이페이지' },
+    { icon: iconMap.accountCircle, path: '/mypage', label: '마이페이지' },
   ];
 
   return (
     <S.TabBarWrapper>
       {tabs.map((tab) => (
-        <S.TabItem key={tab.path} onClick={() => navigate(tab.path)} isActive={pathname === tab.path}>
-          <S.TabIcon src={tab.icon} isActive={pathname === tab.path} />
-          <S.TabLabel isActive={pathname === tab.path}>{tab.label}</S.TabLabel>
+        <S.TabItem key={tab.path} onClick={() => navigate(tab.path)} $isActive={pathname === tab.path}>
+          <S.TabIcon src={tab.icon} $isActive={pathname === tab.path} />
+          <S.TabLabel $isActive={pathname === tab.path}>{tab.label}</S.TabLabel>
         </S.TabItem>
       ))}
     </S.TabBarWrapper>
