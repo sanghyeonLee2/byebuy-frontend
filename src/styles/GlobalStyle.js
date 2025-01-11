@@ -8,7 +8,8 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    // TODO: 폰트가 정해지면 적용 예정
+    /* font-family:  */
   }
 
   li {
