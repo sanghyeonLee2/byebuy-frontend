@@ -2,21 +2,33 @@ import React, { useEffect, useState } from 'react';
 import {
   ExplorationHeader,
   FilterBtn,
-  ImgWrap,
   MyProductWrap,
   ProductImg,
   ProductInfoWrap,
   ProductTitleWrap,
+  AnimationBox,
+  ItemsContainer, // Added scrollable container
 } from './ExplorationPage.style';
 import { iconMap } from '../../components/icons/iconMap';
-import { getItem, getMyItem } from '../../commons/api/item.api';
+import { getItem, getMyItem, patchItem } from '../../commons/api/item.api';
+import useHeaderNavigation from '../../commons/hooks/useHeaderNavigation';
+import { useNavigate } from 'react-router-dom';
 
 function ExplorationPage(props) {
   const { filerList, myProduct } = iconMap;
   const [items, setItems] = useState([]); // 위치 기반 아이템 상태
   const [myItems, setMyItems] = useState([]); // 개인 아이템 상태
   const [loading, setLoading] = useState(true);
-
+  const [selectedIndex, setSelectedIndex] = useState(null); // 클릭된 아이템의 인덱스
+  const [showBox, setShowBox] = useState(false); // 애니메이션 박스 표시 여부
+  const [animationCompleted, setAnimationCompleted] = useState(false); // 애니메이션 완료 여부
+  const goodSrc = iconMap.good;
+  useHeaderNavigation({
+    left: 'backArrow',
+    title: '물품탐색',
+    right: 'empty',
+  });
+  const navigate = useNavigate();
   useEffect(() => {
     const fetchItems = async () => {
       try {
@@ -45,7 +57,27 @@ function ExplorationPage(props) {
     };
     fetchItems();
   }, []);
+
+  const handleClick = (index, requestedItemId) => {
+    patchItem({ requesterItemId: myItems.id, requestedItemId });
+    setSelectedIndex(index); // 클릭된 요소의 인덱스를 저장
+    setShowBox(true); // 애니메이션 박스를 표시
+    setAnimationCompleted(false); // 애니메이션 시작
+
+    // Reordering logic: Move the clicked item to the front
+    const updatedItems = [...items];
+    const [clickedItem] = updatedItems.splice(index, 1);
+    updatedItems.unshift(clickedItem);
+    setItems(updatedItems);
+
+    // 일정 시간 후 박스를 화면 밖으로 나가게 하는 타이머
+    setTimeout(() => {
+      setShowBox(false); // 애니메이션 박스 숨기기
+      setAnimationCompleted(true); // 애니메이션 완료
+    }, 3000); // 3초 후 박스를 숨깁니다.
+  };
   console.log(items);
+  console.log(myItems);
 
   return (
     <>
@@ -54,18 +86,24 @@ function ExplorationPage(props) {
           <img src={filerList} alt="필터" />
           <span>500m 이내</span>
         </FilterBtn>
-        <MyProductWrap>
+        <MyProductWrap onClick={() => navigate('myitem')}>
           <span>내물건</span>
-          <img src={myProduct} alt={myItems?.title} />
+          <img src={`data:image/jpeg;base64,${myItems.image}`} alt={myItems?.title} />
         </MyProductWrap>
       </ExplorationHeader>
-
       {loading && <p>Loading items...</p>}
 
-      <div>
+      {/* Scrollable container for items */}
+      <ItemsContainer>
         {items.length > 0 ? (
           items.map((item, index) => (
-            <ProductImg key={index} index={index}>
+            <ProductImg
+              key={index}
+              index={index}
+              onClick={() => handleClick(index, item.id)} // 클릭 시 처리
+              isSelected={selectedIndex === index} // 선택된 요소인지 확인
+              isReordered={index === 0} // First item after reorder
+            >
               <ProductInfoWrap>
                 <ProductTitleWrap>
                   <h3>{item?.title}</h3>&nbsp;
@@ -78,7 +116,17 @@ function ExplorationPage(props) {
         ) : (
           <p>No items found.</p>
         )}
-      </div>
+      </ItemsContainer>
+
+      {/* 애니메이션 박스 */}
+      {showBox && !animationCompleted && (
+        <AnimationBox>
+          <div>
+            <span>like</span>
+            <img src={goodSrc} alt="굿굿" />
+          </div>
+        </AnimationBox>
+      )}
     </>
   );
 }

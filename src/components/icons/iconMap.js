@@ -12,4 +12,5 @@ export const iconMap = {
   home: 'src/components/icons/home.svg',
   chat: 'src/components/icons/chat.svg',
   accountCircle: 'src/components/icons/account_circle.svg',
+  good: 'src/components/icons/good.svg',
 };

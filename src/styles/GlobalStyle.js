@@ -21,10 +21,12 @@ export const GlobalStyle = createGlobalStyle`
     justify-content: center;
   }
  #root {
+  position: relative;
   margin: 0 auto;
   padding: 0 20px;
   min-height: 100vh;
   width: 375px;
+  overflow: hidden; 
   background-color: #252528;
  }
   li {
