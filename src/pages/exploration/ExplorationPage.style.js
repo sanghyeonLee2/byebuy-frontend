@@ -49,18 +49,15 @@ export const ProductImg = styled.div`
   min-height: 536px;
   cursor: ${(props) => props.index === 0 && 'pointer'};
   border-top-right-radius: 0;
-  background-color: gray;
   padding-top: 420px;
   margin-bottom: 15px; /* Add margin between items */
-
   ${(props) =>
     props.isSelected &&
     `
-      border: 2px solid #8768FF;
-      box-shadow: 0px 0px 15px 2px rgba(135, 104, 255, 0.7);
+      border: 2px solid #8768FF; /* 강조 테두리 색상 */
+      box-shadow: 0px 0px 15px 2px rgba(135, 104, 255, 0.7); /* 강조 그림자 */
   `}
 `;
-
 export const ProductInfoWrap = styled.div`
   height: 85px;
   padding: 0 20px;
@@ -85,7 +82,7 @@ export const ProductTitleWrap = styled.div`
 
 export const AnimationBox = styled.div`
   span {
-    padding-top: 2px;
+    padding-top: 9px;
   }
   div {
     display: flex;

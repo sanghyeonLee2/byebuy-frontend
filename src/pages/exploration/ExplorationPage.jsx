@@ -15,7 +15,7 @@ import useHeaderNavigation from '../../commons/hooks/useHeaderNavigation';
 import { useNavigate } from 'react-router-dom';
 
 function ExplorationPage(props) {
-  const { filerList, myProduct } = iconMap;
+  const { filerList } = iconMap;
   const [items, setItems] = useState([]); // 위치 기반 아이템 상태
   const [myItems, setMyItems] = useState([]); // 개인 아이템 상태
   const [loading, setLoading] = useState(true);
@@ -37,7 +37,7 @@ function ExplorationPage(props) {
             async (position) => {
               const { latitude, longitude } = position.coords;
               const locationData = await getItem({ latitude, longitude, meters: 500 });
-              setItems(locationData.items);
+              setItems([...locationData.items]);
 
               const myItemsData = await getMyItem();
               setMyItems(myItemsData.items.find((item) => item.isMain));
@@ -76,8 +76,6 @@ function ExplorationPage(props) {
       setAnimationCompleted(true); // 애니메이션 완료
     }, 3000); // 3초 후 박스를 숨깁니다.
   };
-  console.log(items);
-  console.log(myItems);
 
   return (
     <>
@@ -86,9 +84,9 @@ function ExplorationPage(props) {
           <img src={filerList} alt="필터" />
           <span>500m 이내</span>
         </FilterBtn>
-        <MyProductWrap onClick={() => navigate('myitem')}>
+        <MyProductWrap onClick={() => navigate('/myitem')}>
           <span>내물건</span>
-          <img src={`data:image/jpeg;base64,${myItems.image}`} alt={myItems?.title} />
+          <img src={`data:image/jpeg;base64,${myItems.image}`} alt={myItems?.title} width={30} height={30} />
         </MyProductWrap>
       </ExplorationHeader>
       {loading && <p>Loading items...</p>}
@@ -98,7 +96,10 @@ function ExplorationPage(props) {
         {items.length > 0 ? (
           items.map((item, index) => (
             <ProductImg
-              key={index}
+              style={{
+                backgroundImage: `url('data:image/jpeg;base64,${item.image}')`, // Base64 이미지 삽입
+              }}
+              key={item.id}
               index={index}
               onClick={() => handleClick(index, item.id)} // 클릭 시 처리
               isSelected={selectedIndex === index} // 선택된 요소인지 확인
