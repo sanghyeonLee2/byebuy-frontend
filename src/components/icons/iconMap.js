@@ -13,6 +13,7 @@ import me from './me.svg';
 import myProduct from './my_product.svg';
 
 export const iconMap = {
+  good: 'src/components/icons/good.svg',
   backArrow,
   kebab,
   empty,
