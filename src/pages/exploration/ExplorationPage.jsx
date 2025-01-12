@@ -36,7 +36,7 @@ function ExplorationPage(props) {
           navigator.geolocation.getCurrentPosition(
             async (position) => {
               const { latitude, longitude } = position.coords;
-              const locationData = await getItem({ latitude, longitude, meters: 500 });
+              const locationData = await getItem({ latitude, longitude, meters: 50000 });
               setItems([...locationData.items]);
 
               const myItemsData = await getMyItem();
