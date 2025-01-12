@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom'; // useNavigate 훅 가져오기
-import AuthInput from '../../commons/components/AuthInput';
-import * as S from './SigninPage.style';
-import useHeaderNavigation from '../../commons/hooks/useHeaderNavigation';
 import { Login } from '../../commons/api/example.api'; // 로그인 API 호출 함수
+import AuthInput from '../../commons/components/AuthInput';
+import useHeaderNavigation from '../../commons/hooks/useHeaderNavigation';
+import * as S from './SigninPage.style';
 
 function SigninPage() {
   const [formData, setFormData] = useState({
@@ -41,7 +41,7 @@ function SigninPage() {
 
   useHeaderNavigation({
     left: 'backArrow',
-    title: '홈',
+    title: '',
     right: 'empty',
   });
 
