@@ -6,7 +6,7 @@ export const Container = styled.div`
   width: 100%;
 
   button {
-    margin-top: 150px;
+    margin-top: 100px;
   }
 `;
 
