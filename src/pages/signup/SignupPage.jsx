@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import * as S from './SignupPage.style';
+import { useNavigate } from 'react-router-dom';
+import { Register } from '../../commons/api/example.api';
 import AuthInput from '../../commons/components/AuthInput';
 import useHeaderNavigation from '../../commons/hooks/useHeaderNavigation';
-import { Register } from '../../commons/api/example.api';
-import { useNavigate } from 'react-router-dom';
+import * as S from './SignupPage.style';
 
 const SignupPage = () => {
   const [formData, setFormData] = useState({
@@ -42,7 +42,7 @@ const SignupPage = () => {
 
   useHeaderNavigation({
     left: 'backArrow',
-    title: '홈',
+    title: '',
     right: 'empty',
   });
 

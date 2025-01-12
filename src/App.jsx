@@ -16,6 +16,7 @@ import SignupPage from './pages/signup/SignupPage';
 function App() {
   const location = useLocation();
   const isMatchingPage = location.pathname === '/matching';
+  const isNotTapBar = ['/matching', '/signup', '/signin', '/'].includes(location.pathname);
 
   return (
     <>
@@ -33,7 +34,7 @@ function App() {
         <Route path="/mypage" element={<MyPage />} />
         <Route path="/myitem" element={<MyItemListPage />} />
       </Routes>
-      {!isMatchingPage && <TabBar />}
+      {!isNotTapBar && <TabBar />}
     </>
   );
 }
