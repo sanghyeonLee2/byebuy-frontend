@@ -132,17 +132,11 @@ export const ExchangeItem = styled.div`
   align-items: center;
 `;
 
-export const ExchangeImage = styled.div`
+export const ExchangeImage = styled.img`
   width: 60px;
   height: 60px;
   border-radius: 8px;
   overflow: hidden;
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
 `;
 
 export const ExchangeInfo = styled.div`
@@ -178,7 +172,7 @@ export const RegisterButton = styled.button`
   max-width: 320px;
   cursor: pointer;
 
-  padding: 16px 127px;
+  padding: 16px;
   margin-top: auto;
 
   background-color: #8768ff;

@@ -6,6 +6,7 @@ import useHeaderNavigation from '../../commons/hooks/useHeaderNavigation';
 import SendIcon from '../../components/icons/send.svg';
 import AttachIcon from '../../components/icons/attach-file.svg';
 import { getChatHistory } from '../../commons/api/chat.api';
+import useAuthStore from '../../commons/store/useAuthStore';
 
 const compressImage = async (imageFile) => {
   const options = {
@@ -34,7 +35,7 @@ export default function Chat() {
   const [socket, setSocket] = useState(null);
   const [messages, setMessages] = useState([]);
 
-  const currentUserId = 1;
+  const currentUserId = useAuthStore.getState().userId;
   const [inputText, setInputText] = useState('');
   const fileInputRef = useRef(null); // fileInputRef 선언 및 초기화
 
@@ -49,8 +50,7 @@ export default function Chat() {
     };
 
     fetchChatHistory();
-
-    const newSocket = new WebSocket('ws://13.125.124.106:8080/chat?userId=1');
+    const newSocket = new WebSocket(`ws://13.125.219.1:8080/chat?userId=${currentUserId}`);
 
     setSocket(newSocket);
 
