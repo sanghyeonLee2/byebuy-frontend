@@ -55,8 +55,8 @@ export default function ChatListPage() {
     <St.Container>
       <St.RoomList>
         {chatRooms.map((room) => (
-          // <St.RoomItem key={room.roomId} onClick={() => handleRoomClick(room.roomId)}>
-          <St.RoomItem key={room.roomId} onClick={() => handleRoomClick(1)}>
+          <St.RoomItem key={room.roomId} onClick={() => handleRoomClick(room.roomId)}>
+            {/* <St.RoomItem key={room.roomId} onClick={() => handleRoomClick(1)}> */}
             <St.ImageContainer>
               {/* TODO: 상품 이미지가 추가되면 구현 */}
               <img src={room.itemImage} alt="상품 이미지" />
@@ -83,12 +83,6 @@ export default function ChatListPage() {
           </St.RoomItem>
         ))}
       </St.RoomList>
-
-      {/* <St.Navigation> */}
-      {/* <St.NavButton active>채팅</St.NavButton> */}
-      {/* <St.NavButton>홈</St.NavButton> */}
-      {/* <St.NavButton>마이페이지</St.NavButton> */}
-      {/* </St.Navigation> */}
     </St.Container>
   );
 }

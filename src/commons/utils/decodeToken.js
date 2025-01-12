@@ -1,3 +1,5 @@
+import useAuthStore from '../store/useAuthStore';
+
 export const decodeToken = (token) => {
   try {
     const base64Url = token.split('.')[1];
@@ -10,7 +12,15 @@ export const decodeToken = (token) => {
         })
         .join(''),
     );
-    return JSON.parse(jsonPayload);
+    const decodedData = JSON.parse(jsonPayload);
+
+    // userId를 zustand로 저장
+    const { setUserId } = useAuthStore.getState();
+    if (decodedData.userId) {
+      setUserId(decodedData.userId);
+    }
+
+    return decodedData;
   } catch (error) {
     console.error('Invalid token:', error);
     return null;

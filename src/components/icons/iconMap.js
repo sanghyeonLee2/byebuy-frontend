@@ -1,30 +1,16 @@
-import accountCircle from './account_circle.svg';
-import addAPhoto from './add_a_photo.svg';
-import arrowDropDown from './arrow_drop_down.svg';
-import backArrow from './back-arrow.svg';
-import chat from './chat.svg';
-import check from './check.svg';
-import empty from './empty.svg';
-import filterList from './filter_list.svg';
-import home from './home.svg';
-import kebab from './kebab.svg';
-import logo from './logo.svg';
-import me from './me.svg';
-import myProduct from './my_product.svg';
-
 export const iconMap = {
+  backArrow: 'src/components/icons/back-arrow.svg',
+  kebab: 'src/components/icons/kebab.svg',
+  empty: 'src/components/icons/empty.svg',
+  addAPhoto: '../../src/components/icons/add_a_photo.svg',
+  check: 'src/components/icons/check.svg',
+  me: 'src/components/icons/me.svg',
+  arrowDropDown: '../../src/components/icons/arrow_drop_down.svg',
+  filerList: '../../src/components/icons/filter_list.svg',
+  myProduct: '../../src/components/icons/my_product.svg',
+  logo: '../../src/components/icons/logo.svg',
+  home: 'src/components/icons/home.svg',
+  chat: 'src/components/icons/chat.svg',
+  accountCircle: 'src/components/icons/account_circle.svg',
   good: 'src/components/icons/good.svg',
-  backArrow,
-  kebab,
-  empty,
-  addAPhoto,
-  check,
-  me,
-  arrowDropDown,
-  filterList,
-  myProduct,
-  logo,
-  home,
-  chat,
-  accountCircle,
 };

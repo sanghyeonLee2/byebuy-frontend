@@ -5,6 +5,7 @@ import { useAuthGuard } from '../../commons/hooks/useAuthGuard';
 import useHeaderNavigation from '../../commons/hooks/useHeaderNavigation';
 import { decodeToken } from '../../commons/utils/decodeToken';
 import LogOut from '../../components/icons/logout.svg';
+import { useNavigate } from 'react-router-dom';
 import * as St from './MyPage.style';
 
 const MyPage = () => {
@@ -17,6 +18,8 @@ const MyPage = () => {
   const [userData, setUserData] = useState(null);
   const [myItemList, setMyItemList] = useState([]);
   const [myPopularItems, setMyPopularItems] = useState([]);
+
+  const navigate = useNavigate();
   useAuthGuard();
 
   useEffect(() => {
@@ -50,6 +53,7 @@ const MyPage = () => {
   const fetchPopularItems = async (itemId) => {
     try {
       const response = await getMyPopularItem(itemId);
+      console.log(response);
       setMyPopularItems(response.items || []);
     } catch (error) {
       console.error('Failed to fetch popular items', error);
@@ -70,6 +74,10 @@ const MyPage = () => {
       console.error('Failed to logout', error);
       alert('로그아웃에 실패했습니다. 다시 시도해주세요.');
     }
+  };
+
+  const handleMatching = (interestId) => {
+    navigate('/matching', { state: { interestId } }); // 매칭 페이지로 이동하며 interestId 전달
   };
 
   return (
@@ -115,7 +123,7 @@ const MyPage = () => {
         )}
       </St.Section>
 
-      {/* 인기 있는 아이템 리스트 */}
+      {/* 교환 요청 있는 아이템 리스트 */}
       <St.Section>
         <St.SectionHeader>
           <St.SectionHeaderText>
@@ -127,8 +135,8 @@ const MyPage = () => {
         {myPopularItems.length > 0 ? (
           <St.ExchangeList>
             {myPopularItems.map((item) => (
-              <St.ExchangeItem key={item.id}>
-                <ExchangeImage src={item.image} alt={item.title} />
+              <St.ExchangeItem key={item.id} onClick={() => handleMatching(item.interestId)}>
+                {/* <ExchangeImage src={`data:image/jpeg;base64,${item.image}`} alt={item.title} /> */}
                 <St.ExchangeInfo>
                   <St.ExchangeTitle>{item.title}</St.ExchangeTitle>
                   <St.ExchangeDescription>{item.address}</St.ExchangeDescription>
