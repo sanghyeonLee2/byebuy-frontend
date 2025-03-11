@@ -31,9 +31,9 @@
 - 아이디, 이름, 4자리 비밀번호만으로 간단 로그인
 
 <p align="center">
- <img src="./assets/start.png" width="30%" alt="매칭 시작 화면" />
-  <img src="./assets/login.png" width="30%" alt="로그인 화면" />
-  <img src="./assets/signup.png" width="30%" alt="회원가입 화면" />
+  <img src="./assets/start.png" height="400px" alt="매칭 시작 화면" />
+  <img src="./assets/login.png" height="400px" alt="로그인 화면" />
+  <img src="./assets/signup.png" height="400px" alt="회원가입 화면" />
 </p>
 
 ---
@@ -43,18 +43,18 @@
 - 스크롤 기반 탐색 (클릭: 관심)
 
 <p align="center">
-  <img src="./assets/home_exploration.png" width="45%" alt="탐색 필터 화면" />
-  <img src="./assets/home_exploration_like.png" width="45%" alt="탐색 목록 화면" />
+  <img src="./assets/home_exploration.png" height="400px" alt="탐색 필터 화면" />
+  <img src="./assets/home_exploration_like.png" height="400px" alt="탐색 목록 화면" />
 </p>
 
-### 3. 물품 등록
-
 ---
+
+### 3. 물품 등록
 
 - 제목, 설명, 카테고리, 상태, 사진 1장 포함
 
 <p align="center">
-  <img src="./assets/register.png" width="45%" alt="물품 등록 화면" />
+  <img src="./assets/register.png" height="400px" alt="물품 등록 화면" />
 </p>
 
 ---
@@ -65,7 +65,7 @@
 - 매칭 시 알림 UX 표시
 
 <p align="center">
-  <img src="./assets/my_page.png" width="45%" alt="마이페이지 내 매칭 결과" />
+  <img src="./assets/my_page.png" height="400px" alt="마이페이지 내 매칭 결과" />
 </p>
 
 ---
@@ -76,8 +76,8 @@
 - 채팅방 리스트 및 읽지 않은 메시지 수 표시
 
 <p align="center">
-  <img src="./assets/chat_list.png" width="45%" alt="채팅 리스트" />
-  <img src="./assets/chat_room.png" width="45%" alt="채팅방 화면" />
+  <img src="./assets/chat_list.png" height="400px" alt="채팅 리스트" />
+  <img src="./assets/chat_room.png" height="400px" alt="채팅방 화면" />
 </p>
 
 ---
@@ -87,8 +87,8 @@
 - 내 프로필, 내 물건, 매칭된 항목 조회
 
 <p align="center">
-  <img src="./assets/my_page.png" width="45%" alt="마이페이지" />
-  <img src="./assets/my_items.png" width="45%" alt="내 물건 목록" />
+  <img src="./assets/my_page.png" height="400px" alt="마이페이지" />
+  <img src="./assets/my_items.png" height="400px" alt="내 물건 목록" />
 </p>
 
 ## 기술 스택
